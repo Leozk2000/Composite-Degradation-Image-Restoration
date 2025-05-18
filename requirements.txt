@@ -1,0 +1,12 @@
+scikit-image
+pandas
+einops
+thop
+fasttext-wheel
+opencv-python
+h5py
+matplotlib
+transformers
+gradio
+gensim
+gradio_imageslider
