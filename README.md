@@ -1,5 +1,4 @@
 # Composite-Degradation-Image-Restoration
-NTU CCDS Final Year Project
 
 ## Project Links
 [Slides](https://entuedu-my.sharepoint.com/:p:/g/personal/c210024_e_ntu_edu_sg/ER0D2PpI8QZEjE3WAw6LANkBsh7z4znYyYPfii_QgIS24g?e=A1W7Sl)
