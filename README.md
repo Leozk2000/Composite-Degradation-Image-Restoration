@@ -65,6 +65,18 @@ The clear images of CDD-13 can be found in the original paper's GitHub.
 
 After doing the above steps, use [syn_data.py](https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/syn_data/syn_data.py) to generate the final isolated and composite degraded versions.
 
+Isolated:
+
+```
+python syn_data.py --hq-file ./data/clear/ --light-file ./data/light_map/ --depth-file ./data/depth_map/ --rain-file ./data/rain_mask/ --snow-file ./data/snow_mask/ --out-file ./out/ --low 
+```
+
+Composite:
+
+```
+python syn_data.py --hq-file ./data/clear/ --light-file ./data/light_map/ --depth-file ./data/depth_map/ --rain-file ./data/rain_mask/ --snow-file ./data/snow_mask/ --out-file ./out/ --low --haze --rain
+```
+
 
 Data directory should look like this:
 
