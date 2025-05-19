@@ -94,4 +94,4 @@ A generated example is as follows:
 
 | Clear Image | Depth Map | Light Map | Rain Mask | Snow Mask
 | :--- | :---| :---| :--- | :---
-| <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/low.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/light_map.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/rain_mask.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/snow_mask.png" width="200">
+| <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/low.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/light_map.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/rain_mask.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/snow_mask.png" width="200">
