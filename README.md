@@ -9,11 +9,11 @@ In this project, I have made modifications to [OneRestore](https://github.com/gy
 ## Demo
 
 I have created a demo script "create_server.bat" that handles 
-* env creation and activation
+* virtual environment creation and activation
 * launching the server
 * opening localhost tab on browser
 
-Minimum requirement is to have anaconda installed. [Environment.yml](https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/environment.yml) includes cuda-enabled pytorch so its environment creation may fail if you do not have a Nvidia GPU.
+Minimum requirement is to have anaconda installed. The script will download cuda-enabled pytorch if Nvidia GPU is detected, else the regular version will be pip installed instead.
 
 
 ## Testing
@@ -32,10 +32,14 @@ git clone https://github.com/Leozk2000/Composite-Degradation-Image-Restoration.g
 cd Composite-Degradation-Image-Restoration
 
 # create new anaconda env
-conda env create -f environment.yml
-
-# activate anaconda env
+conda create -n onerestore python=3.10 -y
 conda activate onerestore
+
+# pip install pytorch
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+
+# pip install additional packages
+pip install -r requirements.txt
 ```
 
 ### Pretrained Models

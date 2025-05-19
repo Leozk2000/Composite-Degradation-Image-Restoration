@@ -34,14 +34,20 @@ IF %ERRORLEVEL% EQU 0 (
     CALL conda activate onerestore
 )
 
-REM Install PyTorch with CUDA
-echo Installing PyTorch with CUDA support...
-CALL pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+REM Check for NVIDIA GPU and install appropriate PyTorch version
+echo Checking for NVIDIA GPU...
+where nvidia-smi >nul 2>&1
+IF %ERRORLEVEL% EQU 0 (
+    echo NVIDIA GPU detected. Installing PyTorch with CUDA 11.7 support...
+    CALL pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+) ELSE (
+    echo No NVIDIA GPU detected. Installing CPU-only version of PyTorch...
+    CALL pip install torch torchvision torchaudio
+)
 
 REM Install other packages
 echo Installing additional packages from requirements.txt...
 CALL pip install -r requirements.txt
-CALL pip install gensim
 
 REM Start the Python script
 echo Starting app.py...
