@@ -153,20 +153,44 @@ python remove_optim.py --type OneRestore --input-file ./ckpts/onerestore_model.t
 <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.3.png" width="1080">
 </div>
 
-
-<!-- ### Real Scene
-
-</div>
-<div align=center>
-<img src="https://github.com/gy65896/OneRestore/blob/main/img_file/real.jpg" width="1080">
-</div>
-
-### Controllability
+### CDD-13
 
 </div>
 <div align=center>
-<img src="https://github.com/gy65896/OneRestore/blob/main/img_file/control1.jpg" width="410"><img src="https://github.com/gy65896/OneRestore/blob/main/img_file/control2.jpg" width="410">
-</div> -->
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.2.png" width="1080">
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.4.png" width="1080">
+</div>
+
+### Blur-related degradations
+
+</div>
+<div align=center>
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.5.png" width="1080">
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/comparison_grid.png" width="1080">
+</div>
+
+### Real Benchmark Datasets
+
+</div>
+<div align=center>
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.6.png" width="1080">
+</div>
+
+### Real Traffic Scenes
+
+</div>
+<div align=center>
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/realscenes1.png" width="1080">
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/realscenes2.png" width="1080">
+</div>
+
+
+### Ablation Study
+
+</div>
+<div align=center>
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/ablation study.png" width="1080">
+</div>
 
 
 ## Citation
