@@ -9,9 +9,9 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
-REM Check if environment.yml exists
-IF NOT EXIST environment.yml (
-    echo environment.yml not found in current directory!
+REM Check if requirements.txt exists
+IF NOT EXIST requirements.txt (
+    echo requirements.txt not found in current directory!
     pause
     exit /b 1
 )
@@ -23,22 +23,25 @@ IF NOT EXIST app.py (
     exit /b 1
 )
 
-REM Get environment name from yml file
-for /f "tokens=2" %%i in ('type environment.yml ^| findstr /B "name:"') do set ENV_NAME=%%i
-
 REM Check if environment exists
-conda env list | find "%ENV_NAME%" > nul
+conda env list | find "onerestore" > nul
 IF %ERRORLEVEL% EQU 0 (
-    echo Environment %ENV_NAME% exists, updating...
-    CALL conda env update -f environment.yml
+    echo Environment 'onerestore' already exists. Activating...
+    CALL conda activate onerestore
 ) ELSE (
-    echo Creating new environment from environment.yml...
-    CALL conda env create -f environment.yml
+    echo Creating new environment 'onerestore'...
+    CALL conda create -n onerestore python=3.10 -y
+    CALL conda activate onerestore
 )
 
-REM Activate the environment
-echo Activating environment %ENV_NAME%...
-CALL conda activate %ENV_NAME%
+REM Install PyTorch with CUDA
+echo Installing PyTorch with CUDA support...
+CALL pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+
+REM Install other packages
+echo Installing additional packages from requirements.txt...
+CALL pip install -r requirements.txt
+CALL pip install gensim
 
 REM Start the Python script
 echo Starting app.py...
