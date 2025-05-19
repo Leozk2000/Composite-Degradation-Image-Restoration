@@ -92,6 +92,6 @@ Data directory should look like this:
 
 A generated example is as follows:
 
-| Clear Image | Depth Map | Light Map | Rain Mask | Snow Mask
-| :--- | :---| :---| :--- | :---
-| <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/low.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/light_map.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/rain_mask.jpg" width="200"> | <img src="https://github.com/gy65896/OneRestore/blob/main/img_file/snow_mask.png" width="200">
+| Clear Image | Low Light | Haze | Rain | Snow | Blur
+| :--- | :---| :---| :--- | :--- | :---
+| <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/lowlight.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/haze.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/rain.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/snow.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/blur.jpg" width="200">
