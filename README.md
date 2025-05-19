@@ -68,7 +68,7 @@ After doing the above steps, use [syn_data.py](https://github.com/Leozk2000/Comp
 Isolated:
 
 ```
-python syn_data.py --hq-file ./data/clear/ --light-file ./data/light_map/ --depth-file ./data/depth_map/ --rain-file ./data/rain_mask/ --snow-file ./data/snow_mask/ --out-file ./out/ --low 
+python syn_data.py --hq-file ./data/clear/ --light-file ./data/light_map/ --out-file ./out/ --low 
 ```
 
 Composite:
@@ -76,6 +76,13 @@ Composite:
 ```
 python syn_data.py --hq-file ./data/clear/ --light-file ./data/light_map/ --depth-file ./data/depth_map/ --rain-file ./data/rain_mask/ --snow-file ./data/snow_mask/ --out-file ./out/ --low --haze --rain
 ```
+
+
+A generated example is as follows:
+
+| Clear Image | Low Light | Haze | Rain | Snow | Blur
+| :--- | :---| :---| :--- | :--- | :---
+| <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/lowlight.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/haze.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/rain.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/snow.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/blur.png" width="200">
 
 
 Data directory should look like this:
@@ -102,8 +109,74 @@ Data directory should look like this:
 |--test
 ```
 
-A generated example is as follows:
 
-| Clear Image | Low Light | Haze | Rain | Snow | Blur
-| :--- | :---| :---| :--- | :--- | :---
-| <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/clear_img.jpg" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/lowlight.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/haze.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/rain.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/snow.png" width="200"> | <img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/blur.png" width="200">
+### Train Model
+
+**1. Train Text/Visual Embedder by**
+
+```
+python train_Embedder.py --train-dir ./data/CDD-13_train --test-dir ./data/CDD-13_test --check-dir ./ckpts --batch 256 --num-workers 0 --epoch 200 --lr 1e-4 --lr-decay 50
+```
+
+**2. Remove the optimizer weights in the Embedder model file by**
+
+```
+python remove_optim.py --type Embedder --input-file ./ckpts/embedder_model.tar --output-file ./ckpts/embedder_model.tar
+```
+
+**3. Generate the `dataset.h5` file for training OneRestore by**
+
+```
+python makedataset.py --train-path ./data/CDD-13_train --data-name dataset.h5 --patch-size 256 --stride 200
+```
+
+**4. Train OneRestore model by**
+
+```
+python train_OneRestore_single-gpu.py --embedder-model-path ./ckpts/embedder_model.tar --save-model-path ./ckpts --train-input ./dataset.h5 --test-input ./data/CDD-11_test --output ./result/ --epoch 170 --bs 4 --lr 2e-4 --adjust-lr 20 --num-works 4
+```
+
+**5. Remove the optimizer weights in the OneRestore model file by**
+
+```
+python remove_optim.py --type OneRestore --input-file ./ckpts/onerestore_model.tar --output-file ./ckpts/onerestore_model.tar
+```
+
+
+## Performance
+
+### CDD-11
+
+</div>
+<div align=center>
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.1.png" width="1080">
+<img src="https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/blob/main/img_file/Table5.3.png" width="1080">
+</div>
+
+
+<!-- ### Real Scene
+
+</div>
+<div align=center>
+<img src="https://github.com/gy65896/OneRestore/blob/main/img_file/real.jpg" width="1080">
+</div>
+
+### Controllability
+
+</div>
+<div align=center>
+<img src="https://github.com/gy65896/OneRestore/blob/main/img_file/control1.jpg" width="410"><img src="https://github.com/gy65896/OneRestore/blob/main/img_file/control2.jpg" width="410">
+</div> -->
+
+
+## Citation
+
+```
+@misc{leo2025composite,
+  author       = {Leo, Zhi Kai},
+  title        = {Composite Degradation Image Restoration},
+  year         = {2025},
+  note         = {Final Year Project (FYP), Nanyang Technological University, Singapore},
+  howpublished = {\url{https://hdl.handle.net/10356/184085}}
+}
+```
