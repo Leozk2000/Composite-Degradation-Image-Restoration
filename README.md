@@ -40,7 +40,7 @@ conda activate onerestore
 ```
 
 ### Pretrained Models
-Both embedder and model checkpoints can be found in [ckpts](https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/tree/main/ckpts)
+Both embedder and model checkpoints can be found in [ckpts](https://github.com/Leozk2000/Composite-Degradation-Image-Restoration/tree/main/ckpts).
 
 ### Inference
 
