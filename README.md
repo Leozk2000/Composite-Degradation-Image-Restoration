@@ -93,7 +93,7 @@ Data directory should look like this:
 
 ```
 ./data/
-|--train
+|--CDD-13_train
 |  |--blur
 |  |--blur_haze
 |  |--clear
@@ -110,7 +110,7 @@ Data directory should look like this:
 |  |--haze_snow
 |  |--low_haze_rain
 |  |--low_haze_snow
-|--test
+|--CDD-13_test
 ```
 
 
