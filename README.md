@@ -1,6 +1,10 @@
 # Composite-Degradation-Image-Restoration
 NTU CCDS Final Year Project
 
+## Project Links
+[Slides](https://entuedu-my.sharepoint.com/:p:/g/personal/c210024_e_ntu_edu_sg/ER0D2PpI8QZEjE3WAw6LANkBsh7z4znYyYPfii_QgIS24g?e=A1W7Sl)
+[Report](https://entuedu-my.sharepoint.com/:b:/g/personal/c210024_e_ntu_edu_sg/EUUNc3qubThIhnUvM8jokNcBGeNN0wNms2vhLY9orUzvBg?e=TZx7sa)
+
 In this project, I have made modifications to [OneRestore](https://github.com/gy65896/OneRestore) model and extended its use case to blur degradation, commonly observed in traffic scenarios. The experiment setup follows the same method used in the original paper.
 
 ## Demo
