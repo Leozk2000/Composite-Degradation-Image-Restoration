@@ -38,9 +38,9 @@ conda activate onerestore
 
 # pip install pytorch
 # if using Nvidia GPU
-pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 # if using CPU
-pip install torch==2.0.1 torchvision==0.15.2
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu
 
 # pip install additional packages
 pip install -r requirements.txt
