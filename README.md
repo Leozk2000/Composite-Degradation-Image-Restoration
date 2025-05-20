@@ -13,7 +13,7 @@ I have created a demo script "create_server.bat" that handles
 * launching the server
 * opening localhost tab on browser
 
-Minimum requirements for batch script to work is to have anaconda 24.9.1 and python 3.10 installed on base environment. The script will download cuda-enabled pytorch if Nvidia GPU is detected, else the regular version will be pip installed instead.
+Minimum requirements for batch script to work is to execute it in a virtual environment with anaconda 24.9.1 and python 3.10 installed. The script will download cuda-enabled pytorch if Nvidia GPU is detected, else the regular version will be pip installed instead.
 
 
 ## Testing
