@@ -13,7 +13,7 @@ I have created a demo script "create_server.bat" that handles
 * launching the server
 * opening localhost tab on browser
 
-Minimum requirement is to have anaconda installed. The script will download cuda-enabled pytorch if Nvidia GPU is detected, else the regular version will be pip installed instead.
+Minimum requirement is to have anaconda version 24.9.1 installed. The script will download cuda-enabled pytorch if Nvidia GPU is detected, else the regular version will be pip installed instead.
 
 
 ## Testing
@@ -23,6 +23,7 @@ Minimum requirement is to have anaconda installed. The script will download cuda
 If you have not run the demo steps and wish to manually create the environment, please run the following steps.
 
 Install
+- conda 24.9.1
 - python 3.10
 - cuda 11.7
 
