@@ -39,10 +39,10 @@ echo Checking for NVIDIA GPU...
 where nvidia-smi >nul 2>&1
 IF %ERRORLEVEL% EQU 0 (
     echo NVIDIA GPU detected. Installing PyTorch with CUDA 11.7 support...
-    CALL pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+    CALL pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 ) ELSE (
     echo No NVIDIA GPU detected. Installing CPU-only version of PyTorch...
-    CALL pip install torch torchvision torchaudio
+    CALL pip install torch==2.0.1 torchvision==0.15.2
 )
 
 REM Install other packages

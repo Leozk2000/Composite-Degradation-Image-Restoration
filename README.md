@@ -36,7 +36,10 @@ conda create -n onerestore python=3.10 -y
 conda activate onerestore
 
 # pip install pytorch
-pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+# if using Nvidia GPU
+pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+# if using CPU
+pip install torch==2.0.1 torchvision==0.15.2
 
 # pip install additional packages
 pip install -r requirements.txt
